@@ -1,0 +1,33 @@
+{
+  "name": "express-app-example",
+  "version": "1.0.0",
+  "description": "An example of how to structure medium-to-large sized Express apps",
+  "main": "index.js",
+  "engines": {
+    "node": "16.15.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^6.4.0",
+    "helmet": "^5.1.0",
+    "loglevel": "^1.8.0",
+    "npm": "^8.12.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/register": "^7.17.7",
+    "nodemon": "^2.0.16"
+  },
+  "scripts": {
+    "start": "node .",
+    "build": "babel --delete-dir-on-start --out-dir dist --copy-files --ignore \"**/__tests__/**,**/__mocks__/**\" --no-copy-ignored src"
+  },
+  "keywords": [],
+  "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com/)",
+  "license": "MIT"
+}
