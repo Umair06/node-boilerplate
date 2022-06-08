@@ -8,18 +8,16 @@ import globalErrorHandler from './ErrorHandling/errController';
 import helmet from 'helmet';
 const rateLimit = require('express-rate-limit');
 import cors from 'cors';
-import dotenv from 'dotenv';
 
+// importing the env variables from the .env file
+import dotenv from 'dotenv';
 dotenv.config();
 
-//
-const limiter = rateLimit({
-  max: 100,
-  windowMs: 5 * 60 * 1000,
-  message: 'Too many requests from this IP, please try again in an hour!',
-});
-
-function startServer({ port = process.env.PORT } = {}) {
+import config from 'config';
+const rateLimitConfig = config.get('rateLimit');
+const limiter = rateLimit(rateLimitConfig);
+const PORT = config.has('port') ? config.get('port') : '4000';
+function startServer({ port = PORT } = {}) {
   const app = express();
 
   app.use(cors());

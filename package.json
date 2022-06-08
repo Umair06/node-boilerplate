@@ -7,6 +7,7 @@
     "node": "16.15.1"
   },
   "dependencies": {
+    "config": "^3.3.7",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
@@ -24,8 +25,9 @@
     "nodemon": "^2.0.16"
   },
   "scripts": {
-    "start": "node .",
-    "build": "babel --delete-dir-on-start --out-dir dist --copy-files --ignore \"**/__tests__/**,**/__mocks__/**\" --no-copy-ignored src"
+    "dev": "set NODE_ENV=development&& node .",
+    "prod": "set NODE_ENV=production&& node .",
+    "build": "set NODE_ENV=production && babel --delete-dir-on-start --out-dir dist --copy-files --ignore \"**/__tests__/**,**/__mocks__/**\" --no-copy-ignored src"
   },
   "keywords": [],
   "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com/)",

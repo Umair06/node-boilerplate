@@ -1,0 +1,3 @@
+{
+  "db": { "mongoURI": "APP_mongoURI", "mongoPassword": "MONGO_PASSWORD" }
+}

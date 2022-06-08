@@ -1,0 +1,15 @@
+{
+  "port": 5000,
+  "rateLimit": {
+    "max": 100,
+    "windowMs": 250000,
+    "message": "Too many requests from this IP, please try again in an hour!"
+  },
+  "mongoURI": "mongodb://localhost:27017/test",
+  "dbConfig": {
+    "mongoOptions": {
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true
+    }
+  }
+}
